@@ -10,5 +10,23 @@ Linux版をインストール際にはGUIを利用することが出来ず、設
 __方法 1: upgrade-config の importkeys と exportkeys を使用する__   
 __方法 2: Upgrade-config OAuth を使用する__   
 
-上記の内、方法２はいずれ利用できなくなるということらしい。
+上記の内、方法２はいずれ利用できなくなるということらしい。   
+以下の手順はGCDSのパッケージをインストールした後に実行するコマンド。   
 
+# 手順
+サーバーで以下のコマンドを実行する。   
+
+```bash:
+cd /usr/local/GoogleCloudDirSync
+```
+```bash:
+upgrade-config -exportkeys encryption key file <password>
+```
+上記のコマンドを実行すると以下のフォルダに出力されるみたい。   
+```bash:
+/usr/local/GoogleCloudDirSync/encryption
+```
+以下のコマンドで読み込みができる。   
+```bash:
+upgrade-config -importkeys file encryption
+```
